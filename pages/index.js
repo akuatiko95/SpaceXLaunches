@@ -34,6 +34,16 @@ export default function Home({ launches }) {
                     "en-US"
                   )}
                 </p>
+                <p>
+                  <strong>Site:</strong> {launch.launch_site.site_name_long}
+                </p>
+                <p>
+                  <strong>Rocket:</strong> {launch.rocket.rocket_name}
+                </p>
+                <p>
+                  <strong>Resolution:</strong>{" "}
+                  {launch.launch_success ? "✅" : "🔴"}
+                </p>
               </a>
             );
           })}
@@ -41,14 +51,15 @@ export default function Home({ launches }) {
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
+        <p>
+          Made with ❤️ by
+          <a href="https://github.com/gonzaloconcep">
+            <strong style={{ "text-decoration": "underline" }}>
+              {" "}
+              gonzaloconcep
+            </strong>
+          </a>
+        </p>
       </footer>
     </div>
   );
@@ -77,6 +88,7 @@ export async function getStaticProps() {
           rocket {
             rocket_name
           }
+          launch_success
         }
       }
     `,
