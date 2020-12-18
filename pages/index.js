@@ -56,7 +56,7 @@ export default function Home({ launches }) {
           <a href="https://github.com/gonzaloconcep">
             <strong style={{ "text-decoration": "underline" }}>
               {" "}
-              gonzaloconcep!
+              gonzaloconcep
             </strong>
           </a>
         </p>
